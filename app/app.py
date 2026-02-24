@@ -21,8 +21,8 @@ WHAT YOU NEED TO CUSTOMIZE:
     3. Update the model paths if you changed them
     4. Customize the styling if desired
 
-Author: [Your Name]  # <-- UPDATE THIS!
-Dataset: [Your Dataset]  # <-- UPDATE THIS!
+Author: Wendy Zhu  # <-- UPDATE THIS!
+Dataset: "crop_yeild.csv"  # <-- UPDATE THIS!
 """
 
 import streamlit as st
@@ -36,7 +36,7 @@ from pathlib import Path
 # =============================================================================
 # This must be the first Streamlit command!
 st.set_page_config(
-    page_title="ML Prediction App",  # TODO: Update with your project name
+    page_title="Crop Yield Prediction App",  # TODO: Update with your project name
     page_icon="🤖",
     layout="wide",
     initial_sidebar_state="expanded"
@@ -114,14 +114,14 @@ st.sidebar.markdown("---")
 st.sidebar.markdown("### About")
 st.sidebar.info(
     """
-    This app deploys machine learning models trained on [YOUR DATASET].
+    This app deploys machine learning models trained on crop_yeild.csv.
 
-    - **Regression**: Predicts [YOUR TARGET]
-    - **Classification**: Predicts [YOUR CATEGORIES]
+    - **Regression**: Predicts crop yield in ton_per_hectare
+    - **Classification**: Predicts if crop yield is Low / Medium / High
     """
 )
 # TODO: UPDATE YOUR NAME HERE! This shows visitors who built this app.
-st.sidebar.markdown("**Built by:** [YOUR NAME]")
+st.sidebar.markdown("**Built by:** Wendy Zhu")
 st.sidebar.markdown("[GitHub Repo](https://github.com/YOUR-USERNAME/YOUR-REPO)")
 
 
@@ -318,7 +318,7 @@ st.markdown("---")
 st.markdown(
     """
     <div style='text-align: center; color: gray;'>
-        Built by [YOUR NAME] | Full Stack Academy AI & ML Bootcamp
+        Built by Wendy Zhu | Full Stack Academy AI & ML Bootcamp
     </div>
     """,
     unsafe_allow_html=True
