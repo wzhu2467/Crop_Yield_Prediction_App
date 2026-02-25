@@ -422,26 +422,28 @@ Reach out to Abishek on Slack if you have any questions or get stuck!
 
 > **Important:** This section is the first thing visitors see when they land on your GitHub repo. This is your portfolio—make it professional and complete! Update this before your final submission.
 
-**Student Name:** [Your Name]
+**Student Name:** Wendy Zhu
 
-**Dataset:** [Dataset name and source - include a link if from Kaggle]
+**Dataset:** "crop_yield.csv" from Kaggle. It is downloaded from https://www.kaggle.com/datasets/miadul/smart-crop-recommendation-dataset. Original data sourced from FAO (Food and Agriculture Organization) and World Data Bank.
+http://www.fao.org/home/en/
+https://data.worldbank.org/
 
-**Problem Statement:** [What are you trying to predict and why? Write 2-3 sentences explaining the value of this prediction.]
+**Problem Statement:** The goal of this project is to use common features (weather / soil / water / farming management) to estimate crop yeilds knowing the size of the land. This is important for agriculture industry and food policy makers to plan for sustainable farming, to ensure food security and to optimize resource allocation.
 
-**Target Variable:** [Column name - e.g., "price" or "salary"]
+**Target Variable:** ["crop_yield_ton_per_hectare"]
 
-**Selected Features:** [List the 4-8 features your final model uses]
+**Selected Features:** ["Crop_Type", "Fertilizer_Used", "Rainfall", "Soil_Moisture", "N", "P", "K"]
 
-**Best Regression Model:** [Model type and key metric - e.g., "Random Forest (R² = 0.82)"]
+**Best Regression Model:** [LinearRegression (R² = 0.97)"]
 
-**Best Classification Model:** [Model type and key metric - e.g., "Gradient Boosting (Accuracy = 85%)"]
+**Best Classification Model:** ["LogisticRegression (Accuracy = 86%)"]
 
-**Deployed App URL:** [Add your Streamlit Cloud URL once deployed]
+**Deployed App URL:** [(https://cropyieldpredictionapp-enrxqdovscwrgnfwmgz295.streamlit.app/)]
 
 ### Project Highlights
 
-[Write 2-3 bullet points about interesting findings or challenges you overcame. This helps employers understand your thought process!]
+(1) - Baseline models delivered the most reliable performance, showing that simpler approaches can generalize better and capture key yield patterns without unnecessary complexity.
 
--
--
--
+(2) - Most errors occurred between Medium and Low yields, reflecting natural variability and highlighting that borderline cases are inherently harder to distinguish in agricultural production.
+
+(3) - Prioritizing an interpretable, stable model ensures stakeholder trust while revealing opportunities to refine yield thresholds, incorporate additional agronomic factors, or use regression for more precise predictions.
