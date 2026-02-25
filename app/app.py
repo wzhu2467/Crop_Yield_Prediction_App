@@ -318,7 +318,7 @@ elif page == "🏷️ Classification Model":
     #            value=0.0,
     #            key=f"class_{feature}",  # Unique key for classification inputs
     #            help=f"Enter value for {feature}"
-            )
+    #        )
 
     st.markdown("---")
 
