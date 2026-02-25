@@ -165,7 +165,7 @@ if page == "🏠 Home":
     )
 
     # Show a sample of your data or an image (optional)
-    # st.image("path/to/image.png", caption="Sample visualization")
+    st.image("sample_visualizetion.jpg", caption="Sample visualization")
 
 
 # =============================================================================
@@ -198,18 +198,31 @@ elif page == "📈 Regression Model":
     col1, col2 = st.columns(2)
 
     input_values = {}
-
-    for i, feature in enumerate(features):
+    
+    input_values['Crop_Type_Potato'] = st.number_input('Crop_Type_Potato', min_value=0, max_value=1, value=0, help=f"Enter value for Crop_Type_Potato - 1 YES 0 NO")
+    input_values['Crop_Type_Wheat'] = st.number_input('Crop_Type_Wheat', min_value=0, max_value=1, value=0, help=f"Enter value for Crop_Type_Wheat - 1 YES 0 NO")
+    input_values['Crop_Type_Rice'] = st.number_input('Crop_Type_Rice', min_value=0, max_value=1, value=0, help=f"Enter value for Crop_Type_Rice - 1 YES 0 NO")
+    input_values['Crop_Type_Maize'] = st.number_input('Crop_Type_Maize', min_value=0, max_value=1, value=1, help=f"Enter value for Crop_Type_Maize - 1 YES 0 NO")
+    
+    input_values['Fertilizer_Used'] = st.slider('Fertilizer_Used', min_value=60, max_value=350, value=200, help=f"Enter value for Fertilizer_Used")
+    input_values['Railfall'] = st.slider('Railfall', min_value=300, max_value=2800, value=1000, help=f"Enter value for Railfall")
+    input_values['Soil_Moisture'] = st.slider('Soil_Moisture', min_value=15, max_value=65, value=30, help=f"Enter value for Soil_Moisture")
+    input_values['K'] = st.slider('K', min_value=20, max_value=150, value=30, help=f"Enter value for K")
+    input_values['Normalize_Rainfall_by_Windspeed'] = st.slider('Normalize_Rainfall_by_Windspeed', min_value=17, max_value=2700, value=500, help=f"Normalize_Rainfall_by_Windspeed")
+    input_values['N'] = st.slider('N', min_value=30, max_value=180, value=90, help=f"Enter value for N")
+    input_values['P'] = st.slider('P', min_value=15, max_value=100, value=30, help=f"Enter value for P")
+    
+    #for i, feature in enumerate(features):
         # Alternate between columns
-        with col1 if i % 2 == 0 else col2:
+    #    with col1 if i % 2 == 0 else col2:
             # TODO: Customize each input based on your feature type and range
             # Example: For a feature like 'bedrooms' you might use:
             # input_values[feature] = st.number_input(feature, min_value=0, max_value=10, value=3)
 
-            input_values[feature] = st.number_input(
-                label=feature,
-                value=0.0,  # Default value - UPDATE THIS
-                help=f"Enter value for {feature}"
+     #       input_values[feature] = st.number_input(
+     #           label=feature,
+     #           value=0.0,  # Default value - UPDATE THIS
+     #           help=f"Enter value for {feature}"
             )
 
     st.markdown("---")
@@ -226,7 +239,7 @@ elif page == "📈 Regression Model":
         st.success(f"### Predicted Value: {prediction:,.2f}")
 
         # TODO: Add context to your prediction
-        # st.write(f"This means... [interpretation]")
+        st.write(f"This means estimated crop yield is {prediction:,.2f} ton per hectare")
 
         # Show input summary
         with st.expander("View Input Summary"):
@@ -300,16 +313,19 @@ elif page == "🏷️ Classification Model":
         # Display result with color coding
         # TODO: Customize colors based on your categories
         color_map = {
-            'Low': '🔴',
-            'Medium': '🟡',
-            'High': '🟢'
+            #'Low': '🔴',
+            #'Medium': '🟡',
+            #'High': '🟢'
+            'Low': 'y',
+            #'Medium': 'b',
+            #'High': 'g'
         }
         emoji = color_map.get(predicted_label, '🔵')
 
         st.success(f"### Predicted Category: {emoji} {predicted_label}")
 
         # TODO: Add interpretation
-        # st.write(f"This means... [interpretation]")
+        # st.write(f"This means estimated crop yield is {predicted_label}")
 
         # Show input summary
         with st.expander("View Input Summary"):
