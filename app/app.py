@@ -223,7 +223,7 @@ elif page == "📈 Regression Model":
      #           label=feature,
      #           value=0.0,  # Default value - UPDATE THIS
      #           help=f"Enter value for {feature}"
-            )
+     #       )
 
     st.markdown("---")
 
@@ -317,8 +317,8 @@ elif page == "🏷️ Classification Model":
             #'Medium': '🟡',
             #'High': '🟢'
             'Low': 'y',
-            #'Medium': 'b',
-            #'High': 'g'
+            'Medium': 'b',
+            'High': 'g'
         }
         emoji = color_map.get(predicted_label, '🔵')
 
