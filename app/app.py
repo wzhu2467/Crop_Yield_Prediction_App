@@ -165,7 +165,14 @@ if page == "🏠 Home":
     )
 
     # Show a sample of your data or an image (optional)
-    st.image("../docs/sample_visualizetion.jpg", caption="Sample visualization")
+    from pathlib import Path
+
+
+    BASE_DIR = Path(__file__).resolve().parent          # .../app
+    IMG_PATH = BASE_DIR.parent / "docs" / "sample_visualization.jpg"  # .../docs/...
+
+    st.image(str(IMG_PATH), caption="Sample visualization")
+    #st.image("../docs/sample_visualizetion.jpg", caption="Sample visualization")
 
 
 # =============================================================================
