@@ -165,7 +165,7 @@ if page == "🏠 Home":
     )
 
     # Show a sample of your data or an image (optional)
-    st.image("sample_visualizetion.jpg", caption="Sample visualization")
+    st.image("../docs/sample_visualizetion.jpg", caption="Sample visualization")
 
 
 # =============================================================================
