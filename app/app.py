@@ -36,7 +36,7 @@ from pathlib import Path
 # =============================================================================
 # This must be the first Streamlit command!
 st.set_page_config(
-    page_title="Crop Yield Prediction App",  # TODO: Update with your project name
+    page_title="Use Machine Learning to Forecast Crop Yields",  # TODO: Update with your project name
     page_icon="🤖",
     layout="wide",
     initial_sidebar_state="expanded"
@@ -122,7 +122,7 @@ st.sidebar.info(
 )
 # TODO: UPDATE YOUR NAME HERE! This shows visitors who built this app.
 st.sidebar.markdown("**Built by:** Wendy Zhu")
-st.sidebar.markdown("[GitHub Repo](https://github.com/YOUR-USERNAME/YOUR-REPO)")
+st.sidebar.markdown("[GitHub Repo](https://github.com/wzhu2467/Crop_Yield_Prediction_App)")
 
 
 # =============================================================================
@@ -149,13 +149,18 @@ if page == "🏠 Home":
     st.markdown("### About This Project")
     st.write(
         """
-        **Dataset:** [Describe your dataset]
+        **Dataset:** "crop_yield.csv" is a Kaggle dataset. It has 8,367 rows and 20 columns.
 
-        **Problem Statement:** [What are you predicting and why?]
+        **Problem Statement:** Agriculture industry and food policy makers would benefit knowing early how much crops (in tons) 
+                               can be expected knowing the size of the land (in hectare). Early, data-driven yield forecasting 
+                               can support precision agriculture and sustainable farming. It also helps to ensure food security, 
+                               to optimize resource allocation, and to inform evidence-based agricultural policies.
+
+                               In this app, we will use features like soil conditions, water irrigation, farm management and crop type to forecast crop yield.
 
         **Models Used:**
-        - Regression: [Your regression model type]
-        - Classification: [Your classification model type]
+        - Regression: LinearRegression
+        - Classification: LogicticRegression
         """
     )
 
